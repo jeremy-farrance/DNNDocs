@@ -51,12 +51,12 @@
         "exclude": ["obj/**", "_site/**"]
       }
     ],
-    "dest": "../docs/",
+    "dest": "../docs",
     "globalMetadata": {
       "_appLogoPath": "images/dnn_docs_logo.png",
       "_gitContribute": {
         "repo": "https://github.com/DNNCommunity/DNNDocs.git",
-        "branch": "publish"
+        "branch": "master"
       }
     },
     "globalMetadataFiles": [],
