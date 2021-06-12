@@ -2,11 +2,11 @@
 
 name: CI
 
-# Controls when the action will run. 
+# Controls when the action will run.
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
   push:
-    branches: [ publish ]
+    branches: [publish]
   # pull_request:
   #   branches: [ publish ]
 
@@ -25,15 +25,15 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
- 
+
       # copied from docfx-action
       - name: docfx-action
         uses: nikeee/docfx-action@v1.0.0
-        with: 
+        with:
           args: dnndocs-docfx/docfx.json
-        
-      - name: deploy
+
+      - name: Deploy to GH Pages
         uses: peaceiris/actions-gh-pages@v3.6.1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./docs/_site
+          publish_dir: ./docs/
